@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+ <html class="no-js" lang="en"> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>W3C Document Object Model</title>
+
+  <meta name="description" content="A jQuery library for modern HTML presentations">
+  <meta name="author" content="Caleb Troughton">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" media="screen" href="../core/deck.core.css">
+  <link rel="stylesheet" media="screen" href="../extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="../extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="../extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="../extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="../extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="../core/print.css">
+
+  <script src="../modernizr.custom.js"></script> 
+</head>
+
+<body>
+  <div class="deck-container">
+    <section class="slide" id="deckblatt">
+      <h1>Document Object Model</h1>
+    </section>
+      
+    <section class="slide" id="uebersicht">
+      <h2>Document Object Model</h2>
+    
+      <p>Das DOM beschreibt HTML-, SVG- oder XML-Dokumente. Es wird vom W3C, dem World Wide Web Consortium definiert.</p>
+    
+          <p>Für Javascript ist das DOM der Standard für den Zugriff auf Tags, Attribute und Inhalte von HTML-Dokumenten.</p>
+        
+      <img align= "left" id="baum-leer" src="../baum-leer.gif" alt="Beispielbaum" width="600px" style="margin-top:30px">
+  
+          
+      <p align="left" style="margin-top:50px; margin-left:650px;">Durch die Baumstruktur des DOMs, werden alle Elemente des Dokuments in Zusammenhang gesetzt. So kann Javascript von einem Element aus durch die Seite navigieren und Tags, Attribute und Inhalte einfügen, entfernen oder Bestehende verändern.</p>
+    </section>
+      
+    <section class="slide" id="baum">
+      <h2>Der Baum</h2>
+     
+        <div class="box"> 
+        <pre><code>
+ &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Beispielcode&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Ueberschrift&lt;/h1&gt;
+        &lt;p&gt;Das ist ein Paragraph&lt;/p&gt;
+    &lt;/body&gt;
+ &lt;/html&gt;</code>
+        </pre>
+        </div>    
+        
+        <div class="box">
+            <img id="Beispielbaum" src="../Beispielbaum.png" alt="Beispielbaum" align="right">
+        </div>
+        <div align="left" style=" margin-top:480px;">Der DOM Baum besteht aus <strong>nodes</strong> (Knoten). Diese werden mit <strong>root, parent, child</strong> und <strong>sibling</strong> bezeichnet.</div>
+    </section>
+
+    <section class="slide" id="befehle"><h2>Die wichtigsten Befehle</h2>
+        <div class="box2" style="z-index:1;">
+            <img id="Beispielbaum" src="../zusammengefasst.png" alt="Beispielbaum" align="left" width="900px" style="margin-left: 90px;">
+        </div>
+        <div class="box" align="left" style="font-size:19px; margin-left:130px; margin-right:0px; white-space:nowrap;">
+            <ul>
+                <li class="slide">
+                  <strong>node.childNodes[ ]</strong> greift auf das Kind des aktuellen Knotens, </br>auf das der angegebene Index verweist, zu.
+                </li>
+                <li class="slide">
+                  <strong>node.firstChild</strong> oder <strong>node.lastChild</strong> greifen auf das erste- oder letzte Kind </br> des aktuellen Knotens zu.
+                </li>
+
+                <li class="slide">
+                  <strong>node.parentNode</strong> greift auf den Elternknoten des aktuellen Knotens zu.
+                </li>
+
+                <li class="slide">
+                    <strong>node.getElementByID( )</strong> greift auf das Element mit der gesuchten ID zu.
+                </li>
+
+                <li class="slide">
+                    <strong>node.nodeName</strong> gibt den Namen des Knotens wieder </br>(als String in Großbuchstaben).
+                </li>
+
+                <li class="slide">
+                  <strong>node.nodeValue</strong> gibt den Inhalt eines Textknotens oder den Wert </br>eines Attributknotens wieder.
+                </li>
+                <li class="slide">
+                  <strong>node.nodeType</strong> gibt des Typ des aktuellen Knotens wieder
+                     <ol>
+                        <li>Element-node</li>
+                        <li>Attribute-node</li>
+                        <li>Text-node</li>
+                     </ol>
+                </li>
+           </ul>
+        </div> 
+        <div class="slide" align="left" style="z-index:3; font-size:20px; margin-top:490px;">Durch den Zusatz <strong>Element</strong> kann direkt nur auf Knoten des Typs Element zugegriffen werden. </br>(Beispiel: <strong>node.firstElementChild</strong> greift auf das erste Kind vom Typ Element zu.)</div>
+    </section>
+
+    <section class="slide" id="minidemo">
+      <h2 id="mini">Minidemo</h2>
+      <img id="bild" src="../Kanada.JPG" alt="See Kanada" width="600px">
+      <p align="center">Das ist ein Beispielbild.</p>
+    </section>
+
+    <section class="slide" id="quellen"><h2>Meine Quellen</h2>
+            <ul style="font-size:20ox;">
+                <li id="erstens">
+                    http://www.mediaevent.de/tutorial/css-positionieren-float.html
+                </li>
+
+                <li id="zweitens">
+                    https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+                </li>
+
+                <li id="drittens">
+                    http://www.mediaevent.de/javascript/DOM-Knoten-suchen.html
+                </li>
+
+                <li id="viertens">
+                    http://www.quirksmode.org/dom/intro.html
+                </li>
+
+                <li id="fünftens">
+                    http://www.itwissen.info/definition/lexikon/document-object-model-DOM.html
+                </li>
+           </ul>
+    </section>  
+      
+    <section class="slide" id="ende" width="100%">
+        <img src="../wordle%202.jpg" width="4000px" style="opacity:0.4; margin-top:30px;" >
+       <!-- <img src="../wordle%203.png" width="1000px" style="opacity:0.4;">-->
+      <h1 style="opacity:1.0; color:#4D4D4D; background-color:white; font-size:80px;" >Ende</h1>
+    </section>  
+      
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+  </div>
+
+<script src="../jquery.min.js"></script>
+
+<!-- Deck Core and extensions -->
+<script src="../core/deck.core.js"></script>
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+  $.deck('.slide');
+});
+</script>
+
+</body>
+</html>
